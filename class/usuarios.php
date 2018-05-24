@@ -92,17 +92,20 @@ class Usuarios extends Conexion {
                 VALUES('$nick','$pass', '$nombre', '$correo', $tipo, '$facebook', '$twitter', now(), now(), $activo, '$avatar', '$firma')"); 
             // OBTENEMOS EL ULTIMO ID
             $id = $this->mysqli->insert_id;
+			
             // creamos las sesiones para que automaticamente puedas comentar o publicar
             $_SESSION["id"] = $id;
             $_SESSION["nombre"] = $nombre;
             $_SESSION["tipo"] = $tipo;
-
+			
+			unset($_SESSION['action']);
+			
             echo "<script type='text/javascript'>
-            window.location='index.php';
+            window.location='controlador.php';
             </script>";
         } else {
             echo "<script type='text/javascript'>
-            window.location='registrarse.php?m=1';
+            window.location='controlador.php?m=1';
             </script>";
         }
     }

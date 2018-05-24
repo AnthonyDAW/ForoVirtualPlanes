@@ -8,6 +8,7 @@ class Categorias extends Conexion {
     public function __construct() {
         $this->mysqli = parent::conectar();
     }
+	
     //*****************************************************************
     // LISTAMOS TODAS LAS CATEGORIAS
     //*****************************************************************

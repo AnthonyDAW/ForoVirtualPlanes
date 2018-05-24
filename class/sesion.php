@@ -29,14 +29,14 @@ class Sesion extends Conexion {
                 $_SESSION["nombre"] = $key["nombre"];
                 $_SESSION["tipo"] = $key["tipo"];
                 switch ($_SESSION["tipo"]) {
-                    case 1: header("Location: panel.php");
+                    case 1: header("Location: index.php");
                     break;
                     case 2: header("Location: index.php");
                     break;
                 }
             }
         } else {
-            header("Location: entrar.php?m=1");
+            header("Location: index.php?m=1");
         }
     }
 
